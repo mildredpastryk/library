@@ -26,6 +26,12 @@ class Library extends React.Component {
         this.state = {
             open: true
         }
+        this.toggleOpenClosed = this.toggleOpenClosed.bind(this)
+    }
+    toggleOpenClosed() {
+        this.setState({
+            open:  !this.state.open
+        })
     }
     render () {
         console.log(this.state)
@@ -34,6 +40,7 @@ class Library extends React.Component {
 		 <div>
             <h1 className="App-title">My Library</h1>
             <h2>We are {this.state.open ? 'open' : 'closed'}</h2>
+            <button onClick={this.toggleOpenClosed}>Change</button>
             {books.map (
                 (book, i) => 
                     <Book 
