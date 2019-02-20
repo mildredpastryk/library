@@ -36,12 +36,17 @@ class Library extends React.Component {
     state = { 
         open: true,
         freeBookmark: true,
-        hiring: true
+        hiring: true,
+        data: [],
+        loading: false
     }
 
     componentDidMount() {
-        console.log('The component is now mounted')
-    }
+        this.setState({loading: true})
+        fetch('https://hplussport.com/api/products/order/price/sort/asc/qty/1')
+			.then(data => data.json())
+			.then(data => this.setState({data, loading: false}))
+	}
   
     componentDidUpdate() {
         console.log('The component just updated')
