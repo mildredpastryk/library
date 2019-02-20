@@ -1,12 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import { render } from 'react-dom'
+import './App.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Book = ({title, author, pages}) => {
+	return (
+		<section>
+			<h2>{title}</h2>
+			<p>by: {author}</p>
+			<p>Pages: {pages} pages</p>
+		</section>
+	)
+}
+
+const Library = () => {
+	return (
+		<div>
+            <h1 className="App-title">My Library</h1>
+			<Book title="The Sun Also Rises" author="Ernest Hemingway" pages={260}/>
+			<Book title="White Teeth" author="Zadie Smith" pages={480}/>
+			<Book title="Cat's Cradle" author="Kurt Vonnegut" pages={304}/>
+		</div>
+	)
+}
+
+render(
+    <Library />, 
+	document.getElementById('root')
+)
