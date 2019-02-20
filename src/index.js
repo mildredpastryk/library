@@ -21,11 +21,21 @@ const Book = ({title, author, pages, freeBookmark}) => {
 	)
 }
 
+const Hiring = () =>
+    <div>
+        <p>We are hiring. Go to www.library.com/jobs for more.</p>
+    </div>
+
+const notHiring = () =>
+    <div>
+        <p>We are not hiring. Check back later for more info.</p>
+    </div>
+
 class Library extends React.Component {
     
     state = { 
         open: true,
-        freeBookmark: false
+        freeBookmark: true
     }
   
     toggleOpenClosed = () => {
