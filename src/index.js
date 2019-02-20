@@ -21,9 +21,16 @@ const Book = ({title, author, pages}) => {
 }
 
 class Library extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            open: true
+        }
+    }
     render () {
+        console.log(this.state)
         const {books} = this.props
-	   return (
+	    return (
 		 <div>
             <h1 className="App-title">My Library</h1>
             {books.map (
@@ -35,7 +42,7 @@ class Library extends React.Component {
                         pages={book.pages}/>
             )}
 		 </div>
-	   )
+	    )
     }
 }
 
