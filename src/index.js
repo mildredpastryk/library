@@ -22,7 +22,7 @@ const Book = ({title, author, pages}) => {
 
 class Library extends React.Component {
     render () {
-        const books = this.props.books
+        const {books} = this.props
 	   return (
 		 <div>
             <h1 className="App-title">My Library</h1>
