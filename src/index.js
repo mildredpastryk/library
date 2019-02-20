@@ -33,6 +33,7 @@ class Library extends React.Component {
 	    return (
 		 <div>
             <h1 className="App-title">My Library</h1>
+            <h2>We are {this.state.open ? 'open' : 'closed'}</h2>
             {books.map (
                 (book, i) => 
                     <Book 
