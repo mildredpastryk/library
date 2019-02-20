@@ -62,10 +62,27 @@ class Library extends React.Component {
         const {books} = this.props
 	    return (
 		 <div>
-            <h1 className="App-title">My Library</h1>
+            <h1 className="App-title">My Great Library</h1>
             <h2>We are {this.state.open ? 'open' : 'closed'} !</h2>
             <button onClick={this.toggleOpenClosed}>Change</button>
             {this.state.hiring ? <Hiring /> : <notHiring />}
+            {this.state.loading
+                 ? "loading..."
+					: <div>
+						{this.state.data.map(product => {
+							return (
+								<div key={product.id}>
+									<h3>Library Product of the Week!</h3>
+									<h4>{product.name}</h4>
+                                    <p>€ {product.price}</p>
+									<img alt={product.name} src={product.image} height={100}/>
+								</div>
+							)
+						})}
+						
+					</div>
+				}
+            
             {books.map (
                 (book, i) => 
                     <Book 
