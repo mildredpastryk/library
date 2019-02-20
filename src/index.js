@@ -24,7 +24,7 @@ const Book = ({title, author, pages, freeBookmark}) => {
 class Library extends React.Component {
     
     state = { 
-        open: true
+        open: true,
         freeBookmark: false
     }
   
