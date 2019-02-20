@@ -25,8 +25,9 @@ const Library = ({books}) => {
 		<div>
             <h1 className="App-title">My Library</h1>
             {books.map (
-                book => 
+                (book, i) => 
                     <Book 
+                        key={i}
                         title={book.title} 
                         author={book.author} 
                         pages={book.pages}/>
