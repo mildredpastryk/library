@@ -35,7 +35,8 @@ class Library extends React.Component {
     
     state = { 
         open: true,
-        freeBookmark: true
+        freeBookmark: true,
+        hiring: true
     }
   
     toggleOpenClosed = () => {
@@ -43,14 +44,15 @@ class Library extends React.Component {
             open:  !prevState.open
         }))
     }
+    
     render () {
-        console.log(this.state)
         const {books} = this.props
 	    return (
 		 <div>
             <h1 className="App-title">My Library</h1>
-            <h2>We are {this.state.open ? 'open' : 'closed'}</h2>
+            <h2>We are {this.state.open ? 'open' : 'closed'} !</h2>
             <button onClick={this.toggleOpenClosed}>Change</button>
+            {this.state.hiring ? <Hiring /> : <notHiring />}
             {books.map (
                 (book, i) => 
                     <Book 
