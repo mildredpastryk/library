@@ -20,9 +20,11 @@ const Book = ({title, author, pages}) => {
 	)
 }
 
-const Library = ({books}) => {
-	return (
-		<div>
+class Library extends React.Component {
+    render () {
+        const books = this.props.books
+	   return (
+		 <div>
             <h1 className="App-title">My Library</h1>
             {books.map (
                 (book, i) => 
@@ -32,8 +34,9 @@ const Library = ({books}) => {
                         author={book.author} 
                         pages={book.pages}/>
             )}
-		</div>
-	)
+		 </div>
+	   )
+    }
 }
 
 render(
