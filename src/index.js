@@ -33,6 +33,13 @@ const notHiring = () =>
 
 class Library extends React.Component {
     
+    static defaultProps = {
+       books: [
+           {"title": "Success Through A Positive Mental Attitude", "author": "Napoleon Hill", "pages": 384 }
+       ] 
+    }
+     
+    
     state = { 
         open: true,
         freeBookmark: true,
@@ -98,6 +105,6 @@ class Library extends React.Component {
 }
 
 render(
-    <Library books={bookList} />, 
+    <Library  />, 
 	document.getElementById('root')
 )
