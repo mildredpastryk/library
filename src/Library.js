@@ -1,4 +1,9 @@
-
+import React from 'react'
+import './App.css';
+import PropTypes from 'prop-types'
+import { Book } from './Book'
+import { Hiring } from './Hiring'
+import { NotHiring } from './NotHiring'
 
 class Library extends React.Component {
     
